@@ -1,0 +1,48 @@
+{
+  "name": "dsh-edit-resend",
+  "version": "0.1.0",
+  "description": "DSH plugin: edit an already-sent user prompt and resend it. Forks a child session whose inherited prefix stops just before that message, then submits the edited text as its new prompt.",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "stefanydevitoqz-creatorPPP",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanydevitoqz-creatorPPP/dsh-edit-resend.git"
+  },
+  "homepage": "https://github.com/stefanydevitoqz-creatorPPP/dsh-edit-resend#readme",
+  "bugs": {
+    "url": "https://github.com/stefanydevitoqz-creatorPPP/dsh-edit-resend/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "client-plugin",
+    "fork",
+    "regenerate"
+  ],
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}
